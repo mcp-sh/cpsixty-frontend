@@ -7,10 +7,14 @@
           <v-card>
             <v-card-title>{{ guest.name }}</v-card-title>
             <v-card-text>
-              Number of Person: {{ guest.travelInfo.numPax }}<br />
-              Number of Rooms:{{ guest.travelInfo.numRooms }}<br />
-              ETA: {{ formatDate(guest.travelInfo.arrDate) }}<br />
-              ETD: {{ formatDate(guest.travelInfo.depDate) }}
+              <v-row>
+                <v-col> Number of Person: {{ guest.travelInfo.numPax }} </v-col>
+                <v-col> Number of Rooms:{{ guest.travelInfo.numRooms }} </v-col>
+              </v-row>
+              <v-row>
+                <v-col> ETA: {{ formatDate(guest.travelInfo.arrDate) }} </v-col>
+                <v-col> ETD: {{ formatDate(guest.travelInfo.depDate) }} </v-col>
+              </v-row>
             </v-card-text>
           </v-card>
         </router-link>
@@ -34,9 +38,11 @@ export default {
     },
   },
   created() {
-    axios.get(`http://localhost:3000/api/guests/`).then((response) => {
-      this.guests = response.data;
-    });
+    axios
+      .get(`https://cpsixty-api.herokuapp.com/api/guests`)
+      .then((response) => {
+        this.guests = response.data;
+      });
   },
 };
 </script>

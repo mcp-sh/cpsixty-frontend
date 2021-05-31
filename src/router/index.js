@@ -19,7 +19,7 @@ const routes = [
     component: AddGuest,
   },
   {
-    path: "/viewAll",
+    path: "/viewall",
     name: "ViewGuests",
     component: ViewGuests,
   },
