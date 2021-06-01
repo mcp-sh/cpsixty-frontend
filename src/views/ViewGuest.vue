@@ -34,15 +34,27 @@
         </v-card>
       </v-col>
     </v-row>
+    <v-snackbar
+      v-model="successBar"
+      timeout="5000"
+      color="success"
+      outlined
+      top
+    >
+      {{ successText }}
+    </v-snackbar>
   </v-container>
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
+import GuestService from "@/services/GuestService.js";
 import moment from "moment";
 export default {
   data: function () {
     return {
+      successBar: false,
+      successText: "All Good, info updated",
       guest: null,
       menuA: false,
       ETA: null,
@@ -53,24 +65,26 @@ export default {
       return moment(d).format("MMM Do YYYY");
     },
     updateGuest() {
-      axios
-        .patch(
-          `https://cpsixty-api.herokuapp.com/api/guests/${this.guest._id}`,
-          this.guest
-        )
-        .then((response) => {
-          console.log(response);
-        });
+      const id = this.guest._id;
+      const updGuest = {
+        arrDate: this.guest.travelInfo.arrDate,
+        depDate: this.guest.travelInfo.depDate,
+        numPax: this.guest.travelInfo.numPax,
+        numRooms: this.guest.travelInfo.numRooms,
+      };
+      GuestService.updateGuest(id, updGuest).then((response) => {
+        console.log("Status:", response.status, response.data.travelInfo);
+        this.guest = response.data;
+        this.successBar = true;
+      });
     },
   },
   created() {
-    axios
-      .get(
-        `https://cpsixty-api.herokuapp.com/api/guests/${this.$route.params.id}`
-      )
-      .then((response) => {
-        this.guest = response.data;
-      });
+    const guestId = this.$route.params.id;
+    this.$cookies.set("guestId", guestId);
+    GuestService.getGuest(guestId).then((response) => {
+      this.guest = response.data;
+    });
   },
 };
 </script>

@@ -16,7 +16,8 @@
 </template>
 
 <script>
-import axios from "axios";
+import GuestService from "@/services/GuestService.js";
+// import axios from "axios";
 export default {
   data() {
     return {
@@ -30,11 +31,9 @@ export default {
         name: this.name,
         email: this.email,
       };
-      axios
-        .post("https://cpsixty-api.herokuapp.com/api/guests", newGuest)
-        .then((response) => {
-          console.log(response);
-        });
+      GuestService.addGuest(newGuest).then((response) => {
+        console.log(response);
+      });
     },
   },
 };

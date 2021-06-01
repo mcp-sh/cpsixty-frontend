@@ -10,7 +10,8 @@
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
+import GuestService from "@/services/GuestService.js";
 export default {
   name: "Home",
 
@@ -25,7 +26,7 @@ export default {
     };
   },
   created() {
-    axios.get("http://localhost:3000/api/guests").then((response) => {
+    GuestService.getGuests().then((response) => {
       this.guests = response.data;
     });
   },

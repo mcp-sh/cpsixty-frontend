@@ -1,9 +1,21 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
+    <v-app-bar dense app color="primary" dark>
+      <v-toolbar-title>
         <h2>CPsixty</h2>
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <div v-if="guestId">
+        <router-link
+          class="white--text mx-3"
+          :to="{ name: 'ViewGuest', params: { id: guestId } }"
+          >My Info
+        </router-link>
+        <router-link class="white--text mx-3" :to="{ name: 'Home' }"
+          >Home
+        </router-link>
       </div>
+      <v-spacer></v-spacer>
     </v-app-bar>
     <v-main>
       <router-view />
@@ -16,7 +28,10 @@ export default {
   name: "App",
 
   data: () => ({
-    //
+    guestId: "",
   }),
+  mounted() {
+    this.guestId = this.$cookies.get("guestId");
+  },
 };
 </script>

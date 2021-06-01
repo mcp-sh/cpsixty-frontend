@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import GuestService from "@/services/GuestService.js";
 import moment from "moment";
 export default {
   data: function () {
@@ -38,11 +38,9 @@ export default {
     },
   },
   created() {
-    axios
-      .get(`https://cpsixty-api.herokuapp.com/api/guests`)
-      .then((response) => {
-        this.guests = response.data;
-      });
+    GuestService.getGuests().then((response) => {
+      this.guests = response.data;
+    });
   },
 };
 </script>
