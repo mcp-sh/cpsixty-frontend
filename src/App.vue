@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar dense app color="primary" dark>
+    <v-app-bar app color="gray lighten-3">
       <v-toolbar-title>
         <h2>CPsixty</h2>
       </v-toolbar-title>
@@ -8,19 +8,15 @@
       <div>
         <router-link
           v-if="guestId"
-          class="white--text mx-3"
+          class="mx-3"
           :to="{ name: 'viewguest', params: { id: guestId } }"
           >My Info
         </router-link>
-        <router-link class="white--text mx-3" :to="{ name: 'home' }"
-          >Home
-        </router-link>
+        <router-link class="mx-3" :to="{ name: 'home' }">Home </router-link>
       </div>
       <div v-if="isAdmin">
-        <router-link class="white--text mx-3" :to="{ name: 'addguest' }"
-          >Add
-        </router-link>
-        <router-link class="white--text mx-3" :to="{ name: 'viewguests' }"
+        <router-link class="mx-3" :to="{ name: 'addguest' }">Add </router-link>
+        <router-link class="mx-3" :to="{ name: 'viewguests' }"
           >View All
         </router-link>
       </div>
@@ -48,3 +44,15 @@ export default {
   },
 };
 </script>
+<style>
+#app {
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(
+      rgba(67, 102, 217, 0.5),
+      rgba(67, 102, 217, 0.5)
+    ),
+    url("/images/ischia.jpg");
+}
+</style>
