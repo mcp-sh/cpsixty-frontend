@@ -13,7 +13,7 @@
 // import axios from "axios";
 import GuestService from "@/services/GuestService.js";
 export default {
-  name: "Home",
+  name: "Admin",
 
   computed: {
     count() {

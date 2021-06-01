@@ -9,18 +9,18 @@
         <router-link
           v-if="guestId"
           class="white--text mx-3"
-          :to="{ name: 'ViewGuest', params: { id: guestId } }"
+          :to="{ name: 'viewguest', params: { id: guestId } }"
           >My Info
         </router-link>
-        <router-link class="white--text mx-3" :to="{ name: 'Home' }"
+        <router-link class="white--text mx-3" :to="{ name: 'home' }"
           >Home
         </router-link>
       </div>
       <div v-if="isAdmin">
-        <router-link class="white--text mx-3" :to="{ name: 'AddGuest' }"
+        <router-link class="white--text mx-3" :to="{ name: 'addguest' }"
           >Add
         </router-link>
-        <router-link class="white--text mx-3" :to="{ name: 'ViewGuests' }"
+        <router-link class="white--text mx-3" :to="{ name: 'viewguests' }"
           >View All
         </router-link>
       </div>

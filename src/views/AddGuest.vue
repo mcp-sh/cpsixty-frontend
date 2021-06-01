@@ -19,7 +19,7 @@
 
 <script>
 import GuestService from "@/services/GuestService.js";
-// import axios from "axios";
+
 export default {
   data() {
     return {

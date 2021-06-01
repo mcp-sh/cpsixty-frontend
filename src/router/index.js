@@ -11,34 +11,34 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    name: "Home",
+    name: "home",
     component: Home,
   },
   {
     path: "/adminauth",
-    name: "Admin",
+    name: "admin",
     component: Admin,
   },
   {
     path: "/add",
-    name: "AddGuest",
+    name: "addguest",
     component: AddGuest,
   },
   {
     path: "/viewall",
-    name: "ViewGuests",
+    name: "viewguests",
     component: ViewGuests,
   },
   {
     path: "/view/:id",
-    name: "ViewGuest",
+    name: "viewguest",
     component: ViewGuest,
     props: true,
   },
 ];
 
 const router = new VueRouter({
-  mode: "history",
+  mode: "hash",
   base: process.env.BASE_URL,
   routes,
 });
