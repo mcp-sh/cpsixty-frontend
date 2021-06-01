@@ -5,8 +5,9 @@
         <h2>CPsixty</h2>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <div v-if="guestId">
+      <div>
         <router-link
+          v-if="guestId"
           class="white--text mx-3"
           :to="{ name: 'ViewGuest', params: { id: guestId } }"
           >My Info
