@@ -14,6 +14,15 @@
     <v-row justify="center">
       <v-btn @click="addGuest">Add</v-btn>
     </v-row>
+    <v-snackbar
+      v-model="successBar"
+      timeout="5000"
+      color="success"
+      outlined
+      top
+    >
+      {{ successText }}
+    </v-snackbar>
   </v-container>
 </template>
 
@@ -23,6 +32,8 @@ import GuestService from "@/services/GuestService.js";
 export default {
   data() {
     return {
+      successBar: false,
+      successText: "Sucessfully added Guest",
       email: "",
       name: "",
     };
@@ -34,6 +45,9 @@ export default {
         email: this.email,
       };
       GuestService.addGuest(newGuest).then((response) => {
+        this.email = "";
+        this.name = "";
+        this.successBar = true;
         console.log(response);
       });
     },
