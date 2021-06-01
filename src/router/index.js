@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import AddGuest from "@/views/AddGuest.vue";
 import ViewGuest from "@/views/ViewGuest.vue";
 import ViewGuests from "@/views/ViewGuests.vue";
+import Admin from "@/views/Admin.vue";
 
 Vue.use(VueRouter);
 
@@ -12,6 +13,11 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home,
+  },
+  {
+    path: "/adminauth",
+    name: "Admin",
+    component: Admin,
   },
   {
     path: "/add",

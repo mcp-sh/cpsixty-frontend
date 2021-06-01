@@ -1,6 +1,8 @@
 <template>
-  <v-container>
-    <h1>View All Guests</h1>
+  <v-container class="my-3">
+    <v-row justify="center">
+      <h1>View All Guests</h1>
+    </v-row>
     <v-row v-if="guests">
       <v-col cols="6" v-for="guest in guests" :key="guest._id">
         <router-link :to="{ name: 'ViewGuest', params: { id: guest._id } }">

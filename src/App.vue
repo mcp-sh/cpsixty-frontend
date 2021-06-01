@@ -15,6 +15,8 @@
         <router-link class="white--text mx-3" :to="{ name: 'Home' }"
           >Home
         </router-link>
+      </div>
+      <div v-if="isAdmin">
         <router-link class="white--text mx-3" :to="{ name: 'AddGuest' }"
           >Add
         </router-link>
@@ -36,9 +38,13 @@ export default {
 
   data: () => ({
     guestId: "",
+    isAdmin: false,
   }),
   mounted() {
     this.guestId = this.$cookies.get("guestId");
+    if (this.$cookies.get("isAdmin")) {
+      this.isAdmin = true;
+    }
   },
 };
 </script>
