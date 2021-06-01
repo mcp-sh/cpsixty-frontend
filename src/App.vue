@@ -15,6 +15,12 @@
         <router-link class="white--text mx-3" :to="{ name: 'Home' }"
           >Home
         </router-link>
+        <router-link class="white--text mx-3" :to="{ name: 'AddGuest' }"
+          >Add
+        </router-link>
+        <router-link class="white--text mx-3" :to="{ name: 'ViewGuests' }"
+          >View All
+        </router-link>
       </div>
       <v-spacer></v-spacer>
     </v-app-bar>
