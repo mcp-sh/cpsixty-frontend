@@ -9,7 +9,7 @@
         <router-link
           v-if="guestId"
           :to="{ name: 'viewguest', params: { id: guestId } }"
-          >My Info
+          ><v-btn text color="blue accent-2">My Info</v-btn>
         </router-link>
         <router-link :to="{ name: 'home' }">
           <v-btn text color="blue accent-2">Home</v-btn>
