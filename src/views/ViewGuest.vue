@@ -18,10 +18,10 @@ import GuestCardDe from "@/components/guestCardDe.vue";
 import GuestCardEn from "@/components/guestCardEn.vue";
 export default {
   components: { GuestCardDe, GuestCardEn },
+  props: { langDe: Boolean },
   data: function () {
     return {
       guest: null,
-      langDe: false,
     };
   },
   created() {

@@ -5,14 +5,18 @@
       <v-row>
         <v-col cols="12" sm="6">
           <v-text-field
-            v-model="guest.travelInfo.numPax"
+            v-model="updatedGuest.travelInfo.numPax"
             label="Anzahl Personen"
+            prepend-icon="mdi-account"
+            outlined
           ></v-text-field>
         </v-col>
         <v-col cols="12" sm="6">
           <v-text-field
-            v-model="guest.travelInfo.numRooms"
+            v-model="updatedGuest.travelInfo.numRooms"
             label="Anzahl Zimmer"
+            prepend-icon="mdi-bed"
+            outlined
           ></v-text-field>
         </v-col>
       </v-row>
@@ -29,6 +33,7 @@
           >
             <template v-slot:activator="{ on, attrs }">
               <v-text-field
+                outlined
                 label="Ankunft"
                 :value="formatDate(guest.travelInfo.arrDate)"
                 prepend-icon="mdi-calendar"
@@ -41,7 +46,7 @@
               no-title
               locale="de-de"
               :first-day-of-week="1"
-              v-model="guest.travelInfo.arrDate"
+              v-model="updatedGuest.travelInfo.arrDate"
               @input="menuETA = false"
             ></v-date-picker>
           </v-menu>
@@ -59,6 +64,7 @@
           >
             <template v-slot:activator="{ on, attrs }">
               <v-text-field
+                outlined
                 label="Arrival Date"
                 :value="formatDate(guest.travelInfo.depDate)"
                 prepend-icon="mdi-calendar"
@@ -71,7 +77,7 @@
               no-title
               locale="de-de"
               :first-day-of-week="1"
-              v-model="guest.travelInfo.depDate"
+              v-model="updatedGuest.travelInfo.depDate"
               @input="menuETD = false"
             ></v-date-picker>
           </v-menu>
@@ -103,10 +109,12 @@ export default {
   },
   data: function () {
     return {
+      updatedGuest: null,
       successBar: false,
       successText: "All Good, info updated",
       menuETA: false,
       menuETD: false,
+      comment: "",
     };
   },
   methods: {
@@ -116,10 +124,10 @@ export default {
     updateGuest() {
       const id = this.guest._id;
       const updGuest = {
-        arrDate: this.guest.travelInfo.arrDate,
-        depDate: this.guest.travelInfo.depDate,
-        numPax: this.guest.travelInfo.numPax,
-        numRooms: this.guest.travelInfo.numRooms,
+        arrDate: this.updatedGuest.travelInfo.arrDate,
+        depDate: this.updatedGuest.travelInfo.depDate,
+        numPax: this.updatedGuest.travelInfo.numPax,
+        numRooms: this.updatedGuest.travelInfo.numRooms,
       };
       GuestService.updateGuest(id, updGuest).then((response) => {
         console.log("Status:", response.status, response.data.travelInfo);
@@ -127,6 +135,9 @@ export default {
         this.successBar = true;
       });
     },
+  },
+  mounted() {
+    this.updatedGuest = { ...this.guest };
   },
 };
 </script>
