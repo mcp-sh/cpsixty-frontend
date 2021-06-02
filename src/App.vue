@@ -22,10 +22,11 @@
         <router-link :to="{ name: 'viewguests' }">
           <v-btn text color="blue accent-2">View All</v-btn>
         </router-link>
+        <v-btn text color="blue accent-2" @click="toggleLang">EN | DE</v-btn>
       </div>
     </v-app-bar>
     <v-main>
-      <router-view />
+      <router-view :langDe="langDe" />
     </v-main>
   </v-app>
 </template>
@@ -37,7 +38,13 @@ export default {
   data: () => ({
     guestId: "",
     isAdmin: false,
+    langDe: false,
   }),
+  methods: {
+    toggleLang() {
+      this.langDe = !this.langDe;
+    },
+  },
   mounted() {
     this.guestId = this.$cookies.get("guestId");
     if (this.$cookies.get("isAdmin")) {

@@ -16,6 +16,7 @@
           <v-card-text>
             <v-text-field label="Name" v-model="name"></v-text-field>
             <v-text-field label="Email" v-model="email"></v-text-field>
+            <v-checkbox v-model="langDe" label="Deutsch" />
           </v-card-text>
           <v-card-actions>
             <v-btn text color="blue accent-4" @click="addGuest">Add</v-btn>
@@ -48,6 +49,7 @@ export default {
       email: "",
       name: "",
       isAdmin: false,
+      langDe: true,
     };
   },
   methods: {

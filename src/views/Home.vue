@@ -1,7 +1,24 @@
 <template>
   <v-container id="home">
     <v-sheet color="rgba(255,255,255,0.8)" min-height="60vh" class="pa-4 mt-4">
-      <v-row>
+      <v-row v-if="langDe">
+        <v-col cols="10" class="mb-4">
+          <div class="text-h5 mb-5">Hallo {{ currentGuest.name }}</div>
+          <div class="text-body-1 mb-3">
+            Ich freue mich sehr, dass du mit mir zusammen meinen Geburtstag
+            feiern willst. Um alles vorzubereiten und besser planen zu können
+            vervollständige bitte deine Informationen.
+          </div>
+          <div class="text-body-1">
+            Erstmal ein paar allgemeine Informationen.Ich hoffe das alle am
+            <span class="font-weight-medium">zweiten Juli</span>
+            auf Ischia ankommen werden und wir dann gemeinsam ein schönes
+            entspanntes Wochenende in der Landschaft mit guter italienischer
+            Gastfreundschaft geniessen können.
+          </div>
+        </v-col>
+      </v-row>
+      <v-row v-else>
         <v-col cols="10" class="mb-4">
           <div class="text-h5 mb-5">Hello {{ currentGuest.name }}</div>
           <div class="text-body-1 mb-3">
@@ -44,6 +61,7 @@
 import GuestService from "@/services/GuestService.js";
 export default {
   name: "Home",
+  props: { langDe: Boolean },
 
   computed: {
     count() {
