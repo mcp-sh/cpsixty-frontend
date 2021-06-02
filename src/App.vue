@@ -2,25 +2,27 @@
   <v-app>
     <v-app-bar app color="gray lighten-3">
       <v-toolbar-title>
-        <h2>CPsixty</h2>
+        <div class="blue--text display text-h5">CP@sixty</div>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <div>
         <router-link
           v-if="guestId"
-          class="mx-3"
           :to="{ name: 'viewguest', params: { id: guestId } }"
           >My Info
         </router-link>
-        <router-link class="mx-3" :to="{ name: 'home' }">Home </router-link>
-      </div>
-      <div v-if="isAdmin">
-        <router-link class="mx-3" :to="{ name: 'addguest' }">Add </router-link>
-        <router-link class="mx-3" :to="{ name: 'viewguests' }"
-          >View All
+        <router-link :to="{ name: 'home' }">
+          <v-btn text color="blue accent-2">Home</v-btn>
         </router-link>
       </div>
-      <v-spacer></v-spacer>
+      <div v-if="isAdmin">
+        <router-link :to="{ name: 'addguest' }">
+          <v-btn text color="blue accent-2">Add</v-btn>
+        </router-link>
+        <router-link :to="{ name: 'viewguests' }">
+          <v-btn text color="blue accent-2">View All</v-btn>
+        </router-link>
+      </div>
     </v-app-bar>
     <v-main>
       <router-view />
