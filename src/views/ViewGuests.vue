@@ -1,5 +1,11 @@
 <template>
-  <v-container class="my-3">
+  <v-container v-if="!isAdmin" class="my-3">
+    <v-row justify="center">
+      <h1>Nothing to see here, Sorry.</h1>
+    </v-row>
+  </v-container>
+
+  <v-container class="my-3" v-else>
     <v-row justify="center">
       <h1>View All Guests</h1>
     </v-row>
@@ -43,6 +49,7 @@ export default {
   data: function () {
     return {
       guests: null,
+      isAdmin: false,
     };
   },
   methods: {
@@ -54,6 +61,9 @@ export default {
     GuestService.getGuests().then((response) => {
       this.guests = response.data;
     });
+    if (this.$cookies.get("isAdmin")) {
+      this.isAdmin = true;
+    }
   },
 };
 </script>
