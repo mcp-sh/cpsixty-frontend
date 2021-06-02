@@ -6,13 +6,13 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <div>
+        <router-link :to="{ name: 'home' }">
+          <v-btn text color="blue accent-2">Home</v-btn>
+        </router-link>
         <router-link
           v-if="guestId"
           :to="{ name: 'viewguest', params: { id: guestId } }"
           ><v-btn text color="blue accent-2">My Info</v-btn>
-        </router-link>
-        <router-link :to="{ name: 'home' }">
-          <v-btn text color="blue accent-2">Home</v-btn>
         </router-link>
       </div>
       <div v-if="isAdmin">
@@ -47,6 +47,9 @@ export default {
 };
 </script>
 <style>
+a {
+  text-decoration: none;
+}
 #app {
   min-height: 100vh;
   background-repeat: no-repeat;

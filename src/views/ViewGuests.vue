@@ -6,7 +6,7 @@
   </v-container>
 
   <v-container class="my-3" v-else>
-    <v-row justify="center">
+    <v-row justify="center" class="mb-4">
       <h1>View All Guests</h1>
     </v-row>
     <v-row v-if="guests" justify="center">
@@ -18,6 +18,7 @@
             <th>Rooms</th>
             <th>ETA</th>
             <th>ETD</th>
+            <th>Sprache</th>
             <th class="text-center">Action</th>
           </tr>
         </thead>
@@ -28,6 +29,7 @@
             <td>{{ guest.travelInfo.numRooms }}</td>
             <td>{{ formatDate(guest.travelInfo.arrDate) }}</td>
             <td>{{ formatDate(guest.travelInfo.depDate) }}</td>
+            <td>{{ guest.langDe ? "de" : "en" }}</td>
             <td>
               <router-link
                 :to="{ name: 'viewguest', params: { id: guest._id } }"
