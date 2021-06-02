@@ -21,7 +21,7 @@
       <v-row v-else>
         <v-col cols="10" class="mb-4">
           <div class="text-h5 mb-5">Hello {{ currentGuest.name }}</div>
-          <div class="text-body-1 mb-3">
+          <div class="text-subtitle-1 mb-3">
             I am very happy to see that you are going to join me for my birthday
             celebration. In order to get everything setup and make sure we are
             going to have a good time please confirm your details for me to
@@ -35,17 +35,53 @@
             while enjoying Italian hospitality.
           </div>
         </v-col>
-        <v-col cols="6">
+        <v-col cols="4">
           <div class="text-h5">The hotel</div>
-          <div class="text-body-2">
-            We will be staying at the Apollon Club Hotel I will arrange rooms as
-            required for you from Friday to Monday. Should you arrive earlier,
-            please let me know and I will inform the hotel of your schedule.
+          <v-img
+            position="center"
+            max-width="400"
+            height="200"
+            src="/images/apollon-club-hotel-ischia.jpg"
+            class="mb-3"
+          >
+          </v-img>
+          <div class="text-body-1">
+            We will be staying at the
+            <a href="https://hotelapollon.it/" target="_blank"
+              >Apollon Club Hotel</a
+            >
+            I will arrange rooms as required for you from Friday to Monday.
+            Should you arrive earlier, please let me know and I will inform the
+            hotel of your schedule.
           </div>
         </v-col>
-        <v-col cols="6">
+        <v-col cols="4">
+          <div class="text-h5">Ischia</div>
+          <v-img
+            position="center"
+            height="200"
+            max-width="400"
+            src="/images/Ischia-map.png"
+            class="mb-3"
+          >
+          </v-img>
+          <div class="text-body-1">
+            Ischia is easily reached form Naples by ferry. The transfer by ferry
+            takes about 1 hour. The ferry terminal is easily reached from Naples
+            airport by taxi.
+          </div>
+        </v-col>
+        <v-col cols="4">
           <div class="text-h5">Transportation</div>
-          <div class="text-body-2">
+          <v-img
+            position="center"
+            height="200"
+            max-width="400"
+            src="/images/ischia-ferry.jpg"
+            class="mb-3"
+          >
+          </v-img>
+          <div class="text-body-1">
             Ischia is easily reached form Naples by ferry. The transfer by ferry
             takes about 1 hour. The ferry terminal is easily reached from Naples
             airport by taxi.
