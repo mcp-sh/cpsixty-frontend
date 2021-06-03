@@ -131,7 +131,6 @@
             <v-img
               position="center"
               height="200"
-              max-width="400"
               src="/images/Ischia-map.png"
               class="mb-3"
             >
@@ -152,7 +151,6 @@
             <v-img
               position="center"
               height="200"
-              max-width="400"
               src="/images/ischia-ferry.jpg"
               class="mb-3"
             >
