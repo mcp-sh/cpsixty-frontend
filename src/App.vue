@@ -12,8 +12,11 @@
         <router-link
           v-if="guestId"
           :to="{ name: 'viewguest', params: { id: guestId } }"
-          ><v-btn text color="blue accent-2">My Info</v-btn>
+        >
+          <v-btn v-if="langDe" text color="blue accent-2">Reisedaten</v-btn>
+          <v-btn v-else text color="blue accent-2">Travel data</v-btn>
         </router-link>
+        <v-btn text color="blue accent-2" @click="toggleLang">EN | DE</v-btn>
       </div>
       <div v-if="isAdmin">
         <router-link :to="{ name: 'addguest' }">
@@ -22,7 +25,6 @@
         <router-link :to="{ name: 'viewguests' }">
           <v-btn text color="blue accent-2">View All</v-btn>
         </router-link>
-        <v-btn text color="blue accent-2" @click="toggleLang">EN | DE</v-btn>
       </div>
     </v-app-bar>
     <v-main>

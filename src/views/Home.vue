@@ -17,11 +17,62 @@
             Gastfreundschaft geniessen können.
           </div>
         </v-col>
+        <v-col cols="12" md="4">
+          <div class="text-h5">Das Hotel</div>
+          <v-img
+            position="center"
+            max-width="400"
+            height="200"
+            src="/images/apollon-club-hotel-ischia.jpg"
+            class="mb-3"
+          >
+          </v-img>
+          <div class="text-body-1">
+            Wir werden im
+            <a href="https://hotelapollon.it/" target="_blank">
+              Apollon Club Hotel
+            </a>
+            wohnen. Ich werde die benötigten Zimmer für dich von Freitag bis
+            Montag reservieren. Falls du früher anreist oder l¨nager bleiben
+            wirst lass es mich bitte wissen um das Hotel zu informieren.
+          </div>
+        </v-col>
+        <v-col cols="12" md="4">
+          <div class="text-h5">Ischia & Sant'Angelo</div>
+          <v-img
+            position="center"
+            height="200"
+            max-width="400"
+            src="/images/Ischia-map.png"
+            class="mb-3"
+          >
+          </v-img>
+          <div class="text-body-1">
+            Sant'Angelo ist ein ruhiges Fischerdorf auf der Insel Ischia in
+            Kampanien. Ischia ist die größte Insel im Golf von Neapel.
+          </div>
+        </v-col>
+        <v-col cols="12" md="4">
+          <div class="text-h5">Transport</div>
+          <v-img
+            position="center"
+            height="200"
+            max-width="400"
+            src="/images/ischia-ferry.jpg"
+            class="mb-3"
+          >
+          </v-img>
+          <div class="text-body-1">
+            Ischia ist mit der Fähre von Neapel zu erreichen. Die Überfahrt
+            dauert ca. eine Stunde. Der Fährhafen ist von Flughafen mit dem Taxi
+            zu erreichen.
+          </div>
+        </v-col>
       </v-row>
       <v-row v-else>
         <v-col cols="10" class="mb-4">
           <div class="text-h5 mb-5">Hello {{ currentGuest.name }}</div>
-          <div class="text-subtitle-1 mb-3">
+          <div class="text-body-1 mb-3">
             I am very happy to see that you are going to join me for my birthday
             celebration. In order to get everything setup and make sure we are
             going to have a good time please confirm your details for me to
@@ -35,7 +86,7 @@
             while enjoying Italian hospitality.
           </div>
         </v-col>
-        <v-col cols="4">
+        <v-col cols="12" md="4">
           <div class="text-h5">The hotel</div>
           <v-img
             position="center"
@@ -47,16 +98,16 @@
           </v-img>
           <div class="text-body-1">
             We will be staying at the
-            <a href="https://hotelapollon.it/" target="_blank"
-              >Apollon Club Hotel</a
-            >
+            <a href="https://hotelapollon.it/" target="_blank">
+              Apollon Club Hotel
+            </a>
             I will arrange rooms as required for you from Friday to Monday.
             Should you arrive earlier, please let me know and I will inform the
             hotel of your schedule.
           </div>
         </v-col>
-        <v-col cols="4">
-          <div class="text-h5">Ischia</div>
+        <v-col cols="12" md="4">
+          <div class="text-h5">Ischia & Sant'Angelo</div>
           <v-img
             position="center"
             height="200"
@@ -66,12 +117,12 @@
           >
           </v-img>
           <div class="text-body-1">
-            Ischia is easily reached form Naples by ferry. The transfer by ferry
-            takes about 1 hour. The ferry terminal is easily reached from Naples
-            airport by taxi.
+            Ischia is the largest island in the gulf of Naples in the Campania
+            region of italy. Sant'Angelo is a quiet fishing village and a
+            popular destination for italian and international visitors.
           </div>
         </v-col>
-        <v-col cols="4">
+        <v-col cols="12" md="4">
           <div class="text-h5">Transportation</div>
           <v-img
             position="center"
