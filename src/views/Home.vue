@@ -34,9 +34,9 @@
               <a href="https://hotelapollon.it/" target="_blank">
                 Apollon Club Hotel
               </a>
-              wohnen. Ich werde die benötigten Zimmer für dich von Freitag bis
-              Montag reservieren. Falls du früher anreist oder l¨nager bleiben
-              wirst lass es mich bitte wissen um das Hotel zu informieren.
+              wohnen. Ich werde die benötigten Zimmer von Freitag bis Montag
+              reservieren. Falls du früher anreist oder länger bleiben wirst
+              lass es mich bitte wissen um das Hotel zu informieren.
             </v-card-text>
           </v-card>
         </v-col>
@@ -118,8 +118,8 @@
               </a>
               I will arrange rooms as required for you from Friday to Monday.
               Should you arrive earlier, please let me know and I will inform
-              the hotel of your schedule. </v-card-text
-            >>
+              the hotel of your schedule.
+            </v-card-text>
           </v-card>
         </v-col>
         <v-col cols="12" md="4">
