@@ -1,9 +1,6 @@
 <template>
   <v-app>
     <v-app-bar app color="gray lighten-3">
-      <v-toolbar-title>
-        <div class="blue--text display text-h5">CP@sixty</div>
-      </v-toolbar-title>
       <v-spacer></v-spacer>
       <div>
         <router-link :to="{ name: 'home' }">
@@ -12,8 +9,11 @@
         <router-link
           v-if="guestId"
           :to="{ name: 'viewguest', params: { id: guestId } }"
-          ><v-btn text color="blue accent-2">My Info</v-btn>
+        >
+          <v-btn v-if="langDe" text color="blue accent-2">Reisedaten</v-btn>
+          <v-btn v-else text color="blue accent-2">Travel data</v-btn>
         </router-link>
+        <v-btn text color="blue accent-2" @click="toggleLang">EN | DE</v-btn>
       </div>
       <div v-if="isAdmin">
         <router-link :to="{ name: 'addguest' }">
@@ -22,8 +22,8 @@
         <router-link :to="{ name: 'viewguests' }">
           <v-btn text color="blue accent-2">View All</v-btn>
         </router-link>
-        <v-btn text color="blue accent-2" @click="toggleLang">EN | DE</v-btn>
       </div>
+      <v-spacer></v-spacer>
     </v-app-bar>
     <v-main>
       <router-view :langDe="langDe" />
