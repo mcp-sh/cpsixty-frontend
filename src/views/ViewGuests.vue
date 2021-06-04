@@ -19,6 +19,7 @@
             <th>ETA</th>
             <th>ETD</th>
             <th>Sprache</th>
+            <th>Updated</th>
             <th class="text-center">Action</th>
           </tr>
         </thead>
@@ -30,6 +31,7 @@
             <td>{{ formatDate(guest.travelInfo.arrDate) }}</td>
             <td>{{ formatDate(guest.travelInfo.depDate) }}</td>
             <td>{{ guest.langDe ? "de" : "en" }}</td>
+            <td>{{ formatDate(guest.updatedAt) }}</td>
             <td>
               <router-link
                 :to="{ name: 'viewguest', params: { id: guest._id } }"
