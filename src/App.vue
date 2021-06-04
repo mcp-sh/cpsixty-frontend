@@ -38,7 +38,7 @@ export default {
   data: () => ({
     guestId: "",
     isAdmin: false,
-    langDe: false,
+    langDe: true,
   }),
   methods: {
     toggleLang() {

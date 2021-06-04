@@ -111,7 +111,7 @@ export default {
     return {
       updatedGuest: null,
       successBar: false,
-      successText: "All Good, info updated",
+      successText: "Informationen wurden gespeichert",
       menuETA: false,
       menuETD: false,
       comment: "",
