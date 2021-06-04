@@ -67,7 +67,7 @@
             <template v-slot:activator="{ on, attrs }">
               <v-text-field
                 outlined
-                label="Arrival Date"
+                label="Departure Date"
                 :value="formatDate(guest.travelInfo.depDate)"
                 prepend-icon="mdi-calendar"
                 readonly
