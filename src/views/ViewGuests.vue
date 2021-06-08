@@ -24,7 +24,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="guest in guests" :key="guest._id">
+          <tr
+            v-for="guest in guests"
+            :key="guest._id"
+            :class="guest.cancelled ? 'red lighten-4' : ''"
+          >
             <td>{{ guest.name }}</td>
             <td>{{ guest.travelInfo.numPax }}</td>
             <td>{{ guest.travelInfo.numRooms }}</td>

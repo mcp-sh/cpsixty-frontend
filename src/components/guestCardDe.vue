@@ -86,6 +86,11 @@
     </v-card-text>
     <v-card-actions>
       <v-btn @click="updateGuest" text color="primary">Aktualisieren</v-btn>
+      <v-spacer></v-spacer>
+      <v-checkbox
+        v-model="guestCancelled"
+        label="Ich schaffe es leider nicht"
+      />
     </v-card-actions>
     <v-snackbar
       v-model="successBar"
@@ -115,6 +120,7 @@ export default {
       menuETA: false,
       menuETD: false,
       comment: "",
+      guestCancelled: false,
     };
   },
   methods: {
@@ -128,6 +134,7 @@ export default {
         depDate: this.updatedGuest.travelInfo.depDate,
         numPax: this.updatedGuest.travelInfo.numPax,
         numRooms: this.updatedGuest.travelInfo.numRooms,
+        cancelled: this.guestCancelled,
       };
       GuestService.updateGuest(id, updGuest).then((response) => {
         console.log("Status:", response.status, response.data.travelInfo);
