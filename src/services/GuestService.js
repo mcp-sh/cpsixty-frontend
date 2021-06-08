@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-  // baseURL: "https://cpsixty-api.herokuapp.com/api",
-  baseURL: "http://localhost:3000/api",
+  baseURL: "https://cpsixty-api.herokuapp.com/api",
+  // baseURL: "http://localhost:3000/api",
   withCredentials: false,
   headers: {
     "API-Token":
